@@ -13,6 +13,7 @@ export interface Book {
     price: number;
     likes: number;
     pubDate: string;
+    orders?: number;
 }
 
 export interface BookDetail extends Book {
