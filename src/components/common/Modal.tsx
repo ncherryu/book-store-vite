@@ -19,7 +19,7 @@ function Modal({ children, isOpen, onClose }: Props) {
 
     const handleOverlayClick = (e: React.MouseEvent) => {
         if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
-            onClose();
+            handleClose();
         }
     }
 
@@ -44,6 +44,7 @@ function Modal({ children, isOpen, onClose }: Props) {
     const handleAnimationEnd = () => {
         if (isFadingOut) {
             onClose();
+            setIsFadingOut(false);
         }
     }
 

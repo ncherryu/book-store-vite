@@ -21,6 +21,7 @@ function Toast({ id, message, type }: ToastItem) {
     const handleAnimationEnd = () => {
         if (isFadingOut) {
             removeToast(id);
+            setIsFadingOut(false);
         }
     };
 
