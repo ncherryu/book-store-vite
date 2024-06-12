@@ -57,6 +57,18 @@ function Books() {
         return <Loading />;
     }
 
+    if (isEmpty) {
+        return (
+            <BooksStyle>
+                <div className='filter'>
+                    <BooksFilter />
+                    <BooksViewSwitcher />
+                </div>
+                <BooksEmpty />
+            </BooksStyle>
+        )
+    }
+
     return (
         <>
             <Title size='large'>도서 검색 결과</Title>
@@ -72,6 +84,7 @@ function Books() {
                         {/* <Pagination pagination={pagination} /> */}
                     </>
                 }
+
                 <div className="more" ref={moreRef}>
                     <Button
                         size='medium'
@@ -82,7 +95,6 @@ function Books() {
                         {hasNextPage ? '더보기' : '마지막 페이지'}
                     </Button>
                 </div>
-                {isEmpty && <BooksEmpty />}
             </BooksStyle>
         </>
     )
