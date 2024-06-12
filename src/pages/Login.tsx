@@ -29,6 +29,7 @@ function Login() {
                             placeholder="이메일"
                             inputType="email"
                             {...register('email', { required: true })}
+                            inputMode="email"
                         />
                         {
                             errors.email &&
@@ -40,6 +41,7 @@ function Login() {
                             placeholder="비밀번호"
                             inputType="password"
                             {...register('password', { required: true })}
+                            inputMode="text"
                         />
                         {
                             errors.password &&
